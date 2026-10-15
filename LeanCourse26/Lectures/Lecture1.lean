@@ -241,7 +241,7 @@ def Statement2 : Prop :=
 def Statement3 : Prop :=
   ∀ n : ℕ, ∃ p ≥ n, Prime p ∧ Prime (p + 2)
 
-
+-- END OF LECTURE 1
 
 
 /- Nat.Prime is a predicate on natural numbers,
