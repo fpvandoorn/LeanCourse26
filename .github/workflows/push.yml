@@ -25,7 +25,7 @@ jobs:
           fetch-depth: 0 # Fetch all history for all branches and tags
 
       - name: Build Lean
-        uses: leanprover/lean-action@434f25c2f80ded67bba02502ad3a86f25db50709 # v1.3.0
+        uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865 # v1.6.1
         with:
           auto-config: false
           use-github-cache: false
