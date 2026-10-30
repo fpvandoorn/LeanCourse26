@@ -511,3 +511,5 @@ example (n m : ℕ) (h : n = m * m + 2) :
   -- norm_cast isn't nice here
   push_cast
   ring
+
+-- END OF LECTURE HERE
