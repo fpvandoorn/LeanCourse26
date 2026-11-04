@@ -11,7 +11,7 @@ You are allowed to ask any AI questions, but it is not allowed to write the form
 
 1. Clone the Formal Conjectures repository: https://github.com/google-deepmind/formal-conjectures
   See [`Git.md`](./Git.md) for Git instructions.
-2. Choose a conjecture to formalise, and enter it in [this table](https://uni-bonn.sciebo.de/s/MaJYF3Tf36oQy4Q) together with your name.
+2. Choose a conjecture to formalise, and enter it in [this table](https://uni-bonn.sciebo.de/s/LWckyNXFZoDzKTf) together with your name.
 
     Please make sure it is not contained in the Formal Conjectures repository already.
     If the conjecture you want to formalise is already "taken" by a fellow student, please choose another one.
