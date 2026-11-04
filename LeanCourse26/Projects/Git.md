@@ -1,7 +1,5 @@
 This page will describe some Git terminology and Git actions.
 
- <!-- update years every time. -->
-
 ## Git Terminology
 
 * `git` is a version control system. It will store changes you made, and will allow you to revert to previous versions of your files.

@@ -35,13 +35,12 @@ You are allowed to ask any AI questions, but it is not allowed to write the form
 6. **If the previous step was short** (< 10 lines of Lean code, counting only definitions and theorem statements), **formalize a second one**. Create a separate branch/pull request for the second conjecture.
 7. **Ask another student or a tutor to check whether your formalization looks correct**.
 8. Commit and push your changes to your own fork of the repository. Then make a pull request with your formal conjecture to the [upstream repository](https://github.com/google-deepmind/formal-conjectures).
-9. Add a link to your pull request(s) to [the table](https://uni-bonn.sciebo.de/s/LWckyNXFZoDzKTf). <!-- TODO: update -->
+9. Add a link to your pull request(s) to [the table](https://uni-bonn.sciebo.de/s/LWckyNXFZoDzKTf).
 10. After you receive comments on your pull request, incorporate them, and push them to your branch.
 11. Repeat step 10 until the pull request is merged.
 
 ### Deadlines
 
-<!-- double check! -->
 * November 18: Create a first version of your conjecture and make a pull request.
 * November 27: Incorporate all requested changes from the first review on your pull request.
 * December 4 (not strict): Repeatedly incorporate requests by a reviewer until your pull request is merged.
