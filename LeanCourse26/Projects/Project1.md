@@ -17,11 +17,9 @@ You are allowed to ask any AI questions, but it is not allowed to write the form
     If the conjecture you want to formalise is already "taken" by a fellow student, please choose another one.
     Here are some sources for a new conjectures. (You are free to choose a different research conjecture.)
     - Wikipedia: https://en.wikipedia.org/wiki/List_of_conjectures, https://en.wikipedia.org/wiki/Category:Conjectures or elsewhere
-    - Another repository, like https://www.erdosproblems.com/, https://oeis.org/ or something else
-    - You can see other sources in the Formal Conjectures README: https://github.com/google-deepmind/formal-conjectures?tab=readme-ov-file#contributing
     - Choose one from the Formal Conjectures issue list: https://github.com/google-deepmind/formal-conjectures/issues?q=is%3Aissue+is%3Aopen+no%3Aassignee+-linked%3Apr+label%3A%22new+conjecture%22
+    - Another list of conjectures, like https https://oeis.org/ (search for "conjecture"); [Optimization constants](https://github.com/teorth/optimizationproblems) or [Kourovka](https://arxiv.org/abs/1401.0300)
 
-    Make sure that it's possible to state your conjecture without having to develop a whole mathematical theory first.
 
 3. Read the Formal Conjectures [contribution guidelines](https://github.com/google-deepmind/formal-conjectures/blob/main/CONTRIBUTING.md), especially the sections "Contribution process", "File structure conventions", "The @[category] attribute" and and "Style Guidelines".
 
