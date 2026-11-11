@@ -15,6 +15,8 @@ You are encouraged to think of your own project.
 
 * In **combinatorics**, prove the Loomis-Whitney inequality for lattices.
 
+* In **algebraic geometry**, the company Axiom has a list of exercises [here](https://stacks.axiommath.ai/contributing). Some of these could be good starter projects. You are allowed, but not required, to submit your project in their system as well.
+
 * In **differential geometry**
   - Show that on a simply connected domain, every closed 1-form is exact. (Mathlib is still missing a general definition of n-forms, but that is too hard for a project)
   - Prove that a diffeomorphism between connected manifolds is either orientation-preserving or orientation-reversing (copy-paste the definition of orientable manifold from Mathlib PR [#35376](https://github.com/leanprover-community/mathlib4/pull/35376) and assume your manifolds have no boundary).
