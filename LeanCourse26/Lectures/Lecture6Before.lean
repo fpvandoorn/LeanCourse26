@@ -283,7 +283,18 @@ example (f : α → β) (s : Set α) : f '' s = { y : β | ∃ x ∈ s, f x = y 
 
 
 example {s : Set α} {t : Set β} {f : α → β} : f '' s ⊆ t ↔ s ⊆ f ⁻¹' t := by
-  sorry
+  constructor
+  · intro h x hx
+    simp
+    apply h
+    use x
+  · intro h y hy
+    obtain ⟨x, hxs, hxy⟩ := hy
+    -- rw[← hxy]
+    subst y
+    have hxt : x ∈ f⁻¹' t := h hxs
+    simp at hxt
+    exact hxt
 
 
 /- We can do pointwise operations on sets (e.g. the Minkowski sum). -/
@@ -445,4 +456,3 @@ example (n m : ℕ) (h : n = m * m + 2) :
     (n : ℝ) - 3 = (m + 1) * (m - 1) := by
   sorry
   done
-
