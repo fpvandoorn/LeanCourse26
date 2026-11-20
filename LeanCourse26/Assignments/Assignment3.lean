@@ -134,22 +134,76 @@ end Set
 /- Prove this without using lemmas from Mathlib. -/
 lemma image_and_intersection {α β : Type*} (f : α → β) (s : Set α) (t : Set β) :
     f '' s ∩ t = f '' (s ∩ f ⁻¹' t) := by
-  sorry
+  ext y
+  constructor
+  · intro h
+    obtain ⟨⟨x, hx, hxy⟩, ht⟩ := h
+    rw [←hxy] at ht
+    have h2 : x ∈ s ∩ f ⁻¹' t :=⟨hx, ht⟩
+    exact ⟨x, h2, hxy⟩
+  . intro h
+    obtain ⟨x, ⟨hx, ht⟩, hxy⟩ := h
+    constructor
+    · exact ⟨x,hx, hxy⟩
+    · have h2 : f x ∈ t := ht
+      rw[hxy] at h2
+      assumption
 
 /- Prove this without using lemmas from Mathlib. -/
 -- Note: we still use the `simp` tactic... which is using mathlib, but only in a mild way.
 -- That's a reasonable compromise for now.
 example {I : Type*} (f : α → β) (A : I → Set α) : (f '' ⋃ i, A i) = ⋃ i, f '' A i := by
-  sorry
+  ext y
+  constructor
+  · simp
+    intro x X h1 h2
+    use X
+    exact ⟨x, h1, h2⟩
+  · simp
+    intro X x h1 h2
+    use x
+    constructor
+    · use X
+    · assumption
 
 /- Prove this without using lemmas from Mathlib. -/
 example {a b c d : ℝ} (hab : a < b) : Icc a b ⊆ Ioo c d ↔ c < a ∧ b < d := by
-  sorry
+  constructor
+  · intro h
+    constructor
+    · have ha : a ∈ Icc a b := by
+        refine ⟨?_, ?_⟩
+        · linarith
+        · linarith
+      specialize h ha
+      exact h.1
+    · have hb : b ∈ Icc a b := by
+        refine ⟨?_, ?_⟩
+        · linarith
+        · linarith
+      specialize h hb
+      exact h.2
+  · intro h
+    obtain ⟨h1, h2⟩ := h
+    intro x hx
+    obtain ⟨hx1, hx2⟩ := hx
+    refine ⟨?_, ?_⟩
+    linarith
+    linarith
 
 /- Prove this by finding relevant lemmas in Mathlib. -/
 lemma preimage_square :
     (fun x : ℝ ↦ x ^ 2) ⁻¹' {y | y ≥ 16} = { x : ℝ | x ≤ -4 } ∪ { x : ℝ | x ≥ 4 } := by
-  sorry
+  -- can't find anything :(
+  ext x
+  simp
+  -- apply?
+  constructor
+  · intro h
+    -- apply?
+    sorry
+  · sorry
+
 
 section Surjectivity
 
@@ -166,13 +220,26 @@ example : (g ∘ f) x = g (f x) := by simp
 
 lemma surjective_composition (hf : SurjectiveFunction f) :
     SurjectiveFunction (g ∘ f) ↔ SurjectiveFunction g := by
-  sorry
+  unfold SurjectiveFunction at *
+  constructor
+  · intro h1 z
+    obtain ⟨a, ha⟩ := h1 z
+    exact ⟨f a, ha⟩
+  · intro h1 z
+    obtain ⟨y, h2⟩ := h1 z
+    obtain ⟨x, hx⟩ := hf y
+    rw[← hx] at h2
+    exact ⟨x, h2⟩
 
 /- When composing a surjective function by a linear function
 to the left and the right, the result will still be a
 surjective function. The `ring` tactic will be very useful here! -/
 lemma surjective_linear (hf : SurjectiveFunction f) :
     SurjectiveFunction (fun x ↦ 2 * f (3 * (x + 4)) + 1) := by
+  unfold SurjectiveFunction at *
+  simp
+  intro x
+  use x
   sorry
 
 /- Let's prove Cantor's theorem:
@@ -184,4 +251,3 @@ lemma exercise_cantor (α : Type*) (f : α → Set α) : ¬ Surjective f := by
   sorry
 
 end Surjectivity
-
