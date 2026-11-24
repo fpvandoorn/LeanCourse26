@@ -1,7 +1,7 @@
 import Mathlib
 
 namespace HasseMinkowski
--- step 1 and 2
+-- lemma needed for step 1 and 2 of proof
 lemma square_zero {K : Type*} [Field K] (a b : K) (ha : a ≠ 0)
     (x y : K) (hxy : x ≠ 0 ∨ y ≠ 0) (h : a * x^2 + b * y^2 = 0) :
     IsSquare (-a * b) := by
