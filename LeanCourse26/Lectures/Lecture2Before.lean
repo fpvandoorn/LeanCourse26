@@ -208,7 +208,12 @@ If you have time left, also try them directly with `rw`.
 
 example (a b c : ℝ) (h : a = b - c) (h2 : b * b = 2 * c) :
     a * b = (2 - b) * c := by
-  sorry
+    calc
+    a * b = (b-c) * b := by rw[h]
+    _     = b * b - c * b := by ring
+    _     = 2 * c - c * b := by rw[h2]
+    _     = (2 - b) * c := by ring
+
 
 example (x y z w : ℂ) (h : z = x * y) (h2 : y + 1 = w) :
     x * z = x ^ 2 * (w - 1) := by
